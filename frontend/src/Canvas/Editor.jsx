@@ -1016,7 +1016,7 @@ import {
 import { fetchDesigns } from "../store/designSlice";
 import axiosInstance from "../utils/axiosinstance";
 
-// ------------------ helpers ------------------
+/* helpers */
 const uid = () =>
   `s_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 8)}`;
 
@@ -1030,18 +1030,12 @@ const coerceId = (shape) => ({
   id: String(shape.id ?? shape._id ?? uid()),
 });
 
-// ------------------ Image ------------------
 function KonvaImage({ shape, onSelect, onChange, nodeRef }) {
   const [img] = useImage(shape.src);
-
   return (
     <KImage
       image={img}
-      id={shape.id}
-      x={shape.x}
-      y={shape.y}
-      width={shape.width}
-      height={shape.height}
+      {...shape}
       draggable
       ref={nodeRef}
       onClick={onSelect}
@@ -1065,67 +1059,44 @@ function KonvaImage({ shape, onSelect, onChange, nodeRef }) {
   );
 }
 
-// ================== MAIN ==================
 export default function Editor() {
   const { shapes } = useSelector((state) => state.shapes);
   const selectedDesign = useSelector((state) => state.designs.selected);
-  const { user } = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
   const stageRef = useRef();
   const transformerRef = useRef();
   const nodeRefs = useRef({});
 
-  const [currentColor, setCurrentColor] = useState("#000000");
-  const [isPainting, setIsPainting] = useState(false);
   const [selectedId, setSelectedId] = useState(null);
-  const [editingTextId, setEditingTextId] = useState(null);
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
-  const [fontFamily, setFontFamily] = useState("Arial");
-  const [fontSize, setFontSize] = useState(24);
-  const [isBold, setIsBold] = useState(false);
-  const [isItalic, setIsItalic] = useState(false);
-
-  // ---------- load design ----------
+  /* Load saved design */
   useEffect(() => {
     if (selectedDesign) {
       dispatch(replaceAll(selectedDesign.Shapes.map(coerceId)));
-      setSelectedId(null);
       transformerRef.current?.nodes([]);
     }
   }, [selectedDesign, dispatch]);
 
-  // ---------- canvas size ----------
+  /* Canvas size */
   const [stageSize, setStageSize] = useState({ width: 900, height: 600 });
 
   useEffect(() => {
     const resize = () => {
       const sidebar = window.innerWidth >= 768 && sidebarOpen ? 288 : 0;
       const navbar = 70;
-      const padding = 80;
+      const padding = 120;
 
       setStageSize({
         width: Math.max(320, window.innerWidth - sidebar - padding),
         height: Math.max(400, window.innerHeight - navbar - padding),
       });
     };
-
     resize();
     window.addEventListener("resize", resize);
     return () => window.removeEventListener("resize", resize);
   }, [sidebarOpen]);
-
-  // ---------- handlers ----------
-  const handleAddRect = () =>
-    dispatch(addShape({ type: "rect", x: 100, y: 100, width: 120, height: 80, stroke: currentColor, strokeWidth: 2, id: uid() }));
-
-  const handleStageMouseDown = (e) => {
-    if (e.target === e.target.getStage()) {
-      setSelectedId(null);
-      transformerRef.current?.nodes([]);
-    }
-  };
 
   const selectShape = (id) => {
     setSelectedId(id);
@@ -1133,33 +1104,30 @@ export default function Editor() {
     if (node) transformerRef.current.nodes([node]);
   };
 
-  // ---------- UI ----------
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0F0F23] via-[#1A1A2E] to-[#0F0F23] text-white flex flex-col">
-      <EditNavbar onRect={handleAddRect} />
+      <EditNavbar />
 
       <div className="flex flex-1 overflow-hidden">
         {/* Sidebar */}
-        <div className={`w-72 bg-gray-900/60 backdrop-blur border-r border-purple-900/40 ${sidebarOpen ? "block" : "hidden"} md:block`} />
+        <div className={`w-72 bg-gray-900/60 border-r border-purple-900/40 ${sidebarOpen ? "block" : "hidden"} md:block`} />
 
-        {/* ================= CANVAS AREA ================= */}
-        <div className="flex-1 bg-gradient-to-br from-gray-900/50 to-gray-800/50 p-6 md:p-10 flex justify-center items-center overflow-auto">
+        {/* CANVAS AREA */}
+        <div className="flex-1 bg-gradient-to-br from-gray-900/50 to-gray-800/50 px-6 md:px-10 pb-10 pt-4 overflow-auto">
 
-          {/* EDITOR CONTAINER */}
+          {/* CANVAS CONTAINER */}
           <div
-            className="relative bg-white rounded-2xl shadow-2xl shadow-purple-900/40 border border-purple-200"
+            className="mx-auto bg-white rounded-2xl shadow-2xl shadow-purple-900/40 border border-purple-200"
             style={{
               width: stageSize.width,
               height: stageSize.height,
               maxWidth: "100%",
-              maxHeight: "100%",
             }}
           >
             <Stage
               width={stageSize.width}
               height={stageSize.height}
               ref={stageRef}
-              onMouseDown={handleStageMouseDown}
               className="rounded-2xl"
               style={{ background: "#ffffff" }}
             >
