@@ -1113,7 +1113,7 @@ export default function Editor() {
         <div className={`w-72 bg-gray-900/60 border-r border-purple-900/40 ${sidebarOpen ? "block" : "hidden"} md:block`} />
 
         {/* CANVAS AREA */}
-        <div className="flex-1 bg-gradient-to-br from-gray-900/50 to-gray-800/50 px-6 md:px-10 pb-10 pt-4 overflow-auto">
+        <div className="flex-1 bg-gradient-to-br from-gray-900/50 to-gray-800/50 px-6 md:px-10 pt-4 pb-10 overflow-auto">
 
           {/* CANVAS CONTAINER */}
           <div
