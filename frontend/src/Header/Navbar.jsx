@@ -3,7 +3,7 @@ import React from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { setUser, setAdmin } from "../store/userSlice";
-import NovyGrafyniqLogo from "../assets/novyLogo.png";
+import NovyGrafyniqLogo from "../assets/novylogo.png";
 
 export default function Navbar() {
   const navigate = useNavigate();
