@@ -134,7 +134,7 @@ npm run dev
 http://localhost:3000
 ```
 ## Contributors
-
+<div align="center">
 <table>
   <tr>
     <td align="center">
@@ -151,7 +151,7 @@ http://localhost:3000
     </td>
   </tr>
 </table>
-
+</div>
 
 ## Future Enhancements
 
