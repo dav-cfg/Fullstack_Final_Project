@@ -134,7 +134,20 @@ npm run dev
 http://localhost:3000
 ```
 ## Contributors
-<p align="center"> <a href="https://github.com/NoorAisha25"> <img src="https://avatars.githubusercontent.com/u/119750814?v=4" width="100" height="100" alt="Noor Aisha"/> <br>Noor Aisha </a> &nbsp;&nbsp;&nbsp; <a href="https://github.com/dav-cfg"> <img src="https://avatars.githubusercontent.com/u/000000?v=4" width="100" height="100" alt="Contributor"/> <br>Davidica Asare</a> </p>
+
+<div align="center" style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+
+  <a href="https://github.com/NoorAisha25" style="text-align: center;">
+    <img src="https://avatars.githubusercontent.com/u/119750814?v=4" width="100" height="100" alt="Noor Aisha"/><br/>
+    <strong>Noor Aisha</strong>
+  </a>
+
+  <a href="https://github.com/dav-cfg" style="text-align: center;">
+    <img src="https://avatars.githubusercontent.com/u/000000?v=4" width="100" height="100" alt="Davidica Asare"/><br/>
+    <strong>Davidica Asare</strong>
+  </a>
+
+</div>
 
 ## Future Enhancements
 
