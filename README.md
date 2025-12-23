@@ -2,7 +2,7 @@
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=Novy-Grafyniq&fontSize=60&animation=fadeIn" alt="Novy-Grafyniq"/>
 </p>
 <p align="center">
-  <img width="80" height="80" alt="Novy__1_-removebg-preview" src="https://github.com/user-attachments/assets/01f6321b-7462-43ab-8edc-379ad6c8e290" />
+  <img width="<img width="80" height="80" alt="Novy__1_-removebg-preview" src="https://github.com/user-attachments/assets/a5b8ea47-156b-4847-819c-c761b2ca87ca" />
 </p>
 <p align="center">
   <strong> Full-Stack MERN Web Application</strong>
