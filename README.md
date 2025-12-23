@@ -135,19 +135,23 @@ http://localhost:3000
 ```
 ## Contributors
 
-<div align="center" style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/NoorAisha25">
+        <img src="https://avatars.githubusercontent.com/u/119750814?v=4" width="100px;" alt="Noor Aisha"/><br />
+        <sub><b>Noor Aisha</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/dav-cfg">
+        <img src="https://avatars.githubusercontent.com/u/000000?v=4" width="100px;" alt="Davidica Asare"/><br />
+        <sub><b>Davidica Asare</b></sub>
+      </a>
+    </td>
+  </tr>
+</table>
 
-  <a href="https://github.com/NoorAisha25" style="text-align: center;">
-    <img src="https://avatars.githubusercontent.com/u/119750814?v=4" width="100" height="100" alt="Noor Aisha"/><br/>
-    <strong>Noor Aisha</strong>
-  </a>
-
-  <a href="https://github.com/dav-cfg" style="text-align: center;">
-    <img src="https://avatars.githubusercontent.com/u/000000?v=4" width="100" height="100" alt="Davidica Asare"/><br/>
-    <strong>Davidica Asare</strong>
-  </a>
-
-</div>
 
 ## Future Enhancements
 
