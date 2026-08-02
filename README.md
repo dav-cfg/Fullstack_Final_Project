@@ -1,19 +1,22 @@
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=Novy-Grafyniq&fontSize=60&animation=fadeIn" alt="Novy-Grafyniq"/>
 </p>
+
 <p align="center">
-  <img width="<img width="80" height="80" alt="Novy__1_-removebg-preview" src="https://github.com/user-attachments/assets/a5b8ea47-156b-4847-819c-c761b2ca87ca" />
-</p>
-<p align="center">
-  <strong> Full-Stack MERN Web Application</strong>
+  <img width="80" height="80" alt="Novy Grafyniq logo" src="https://github.com/user-attachments/assets/a5b8ea47-156b-4847-819c-c761b2ca87ca" />
 </p>
 
 <p align="center">
-  <a href="https://novy-grafyniq.vercel.app/" target="_blank"> Live Demo</a> |
+  <strong>A browser-based design tool for posters, banners, and social media visuals</strong>
+</p>
+
+<p align="center">
+  <a href="https://novy-grafyniq.vercel.app/" target="_blank">Live Demo</a>
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" />
+  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white" />
   <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" />
   <img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white" />
   <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" />
@@ -23,38 +26,29 @@
 
 ---
 
-##  About Novy-Grafyniq (Full-Stack)
+## About
 
-**Novy-Grafyniq** is a **modern MERN stack web application**, combining:
+Novy-Grafyniq is a Canva-style design tool that runs entirely in the browser. Users can create posters, banners, and social media graphics without installing any software — just an interactive canvas, image uploads, text customization, and cloud-saved projects accessible from any device.
 
-- **Frontend:** React + Next.js  
-- **Backend:** Node.js + Express  
-- **Database:** MongoDB (hosted on MongoDB Atlas)  
-- **Deployment:** Frontend on Vercel, Backend on Render  
-
-It supports **full CRUD operations**, dynamic data interaction, and a responsive, modern UI.
+It's built as a full-stack MERN application, with Next.js on the frontend for performance and React for the interactive canvas editor.
 
 ---
 
 ## Features
 
-<div align="center">
-
-| Feature | Description |
-|---------|-------------|
-|  Modern UI/UX | Clean, interactive design with animations |
-|  Fully Responsive | Works on mobile, tablet, and desktop |
-|  Fast & Optimized | Frontend optimized with Next.js |
-|  Database | MongoDB database storing dynamic data |
-|  RESTful APIs | Backend APIs for CRUD operations |
-|  Deployment | Frontend on Vercel, Backend on Render |
-|  Secure | Environment variables used for sensitive data |
-
-</div>
+| Feature | What it does |
+|---|---|
+| Canvas Editor | Drag-and-drop design surface — place, move, and layer elements freely |
+| Undo / Redo | Full history control while editing a design |
+| Image Uploads | Import images directly from the user's device into a design |
+| Text Tools | Add and customize text with different fonts, colors, and sizes |
+| Cloud Save | Designs are saved to the backend and accessible from any device, any time |
+| Secure Authentication | JWT-based login, so each user's designs stay private to their account |
+| Responsive Design | Works across desktop, tablet, and mobile |
 
 ---
 
-##  Tech Stack
+## Tech Stack
 
 <p align="center">
   <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white" />
@@ -66,74 +60,78 @@ It supports **full CRUD operations**, dynamic data interaction, and a responsive
   <img src="https://img.shields.io/badge/Render-000000?style=for-the-badge&logo=render&logoColor=white" />
 </p>
 
+| Layer | Technology |
+|---|---|
+| Frontend | React + Next.js |
+| Backend | Node.js + Express |
+| Database | MongoDB (MongoDB Atlas) |
+| Auth | JWT |
+| Deployment | Frontend on Vercel, backend on Render |
+
 ---
 
-##  Project Structure
+## Project Structure
+
 ```
 Novy-Grafyniq/
-├─ backend/ # Node.js + Express API
-│ ├─ controllers/ # API route logic
-│ ├─ models/ # MongoDB schemas
-│ ├─ routes/ # API endpoints
-│ ├─ config/ # DB & environment configs
-│ ├─ server.js # Entry point for backend
-├─ frontend/ # Next.js + React frontend
-│ ├─ pages/ # React pages
-│ ├─ components/ # Reusable components
-│ ├─ styles/ # CSS / Tailwind styles
-├─ package.json # Project dependencies
-├─ README.md # Documentation
+├─ backend/                # Node.js + Express API
+│  ├─ controllers/         # Route logic
+│  ├─ models/               # MongoDB schemas
+│  ├─ routes/               # API endpoints
+│  ├─ config/                # DB and environment config
+│  └─ server.js             # Backend entry point
+├─ frontend/               # Next.js + React frontend
+│  ├─ pages/                 # React pages
+│  ├─ components/          # Reusable UI components
+│  └─ styles/                # CSS / Tailwind styles
+├─ package.json
+└─ README.md
 ```
-
 
 ---
 
-##  Installation & Local Setup
+## Local Setup
 
 ### Backend
 
-1. Navigate to backend folder:
 ```bash
 cd backend
-```
-2. Install Dependencies
- ```
 npm install
 ```
-3.Create .env file with:
+
+Create a `.env` file in `backend/`:
 ```
 PORT=5000
-MONGO_URI=<Your MongoDB Atlas URI>
-JWT_SECRET=<Your Secret Key>
+MONGO_URI=<your MongoDB Atlas URI>
+JWT_SECRET=<your secret key>
+```
 
-```
-4.Run backend server:
-```
+Run the backend:
+```bash
 npm start
-
 ```
+
 ### Frontend
 
-1.Navigate to frontend folder:
-``
+```bash
 cd frontend
-``
-
-2.Install dependencies:
-```
 npm install
-```
-
-3.Run frontend server:
-```
 npm run dev
 ```
 
-4.Open in browser:
-```
-http://localhost:3000
-```
-## Contributors
+Open `http://localhost:3000` in your browser.
+
+---
+
+## Team & Contributions
+
+This was built as a 2-person collaboration, split cleanly by layer:
+
+| Contributor | Role |
+|---|---|
+| [**Noor Aisha**](https://github.com/NoorAisha25) | Frontend — canvas editor, drag-and-drop interface, undo/redo, image upload UI, text tools, responsive design, client-side auth integration |
+| [**Davidica Asare**](https://github.com/dav-cfg) | Backend — Node.js/Express API, MongoDB schemas, authentication logic, cloud-save endpoints |
+
 <div align="center">
 <table>
   <tr>
@@ -153,14 +151,12 @@ http://localhost:3000
 </table>
 </div>
 
+---
+
 ## Future Enhancements
 
-- Dark/Light theme toggle
-
-- Authentication & role-based access
-
-- CMS for dynamic content management
-
-- Analytics & dashboards
-
-- Realtime updates with WebSockets
+- Dark / light theme toggle
+- Role-based access control
+- A content-management layer for reusable design templates
+- Analytics dashboard for usage tracking
+- Real-time collaborative editing via WebSockets
